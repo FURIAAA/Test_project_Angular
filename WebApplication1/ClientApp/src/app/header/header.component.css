@@ -1,0 +1,26 @@
+.header {
+  margin-top: 5px;
+}
+.content{
+  margin-right: 14px;
+}
+.sth {
+  display:inline-block;
+}
+.profile_avatar {
+  margin-left: 3px;
+}
+.text {
+  margin-left: 15px;
+  margin-right: 50px;
+}
+.img{
+  margin:2px;
+
+}
+.navbar {
+  background: #F3F9FF;
+  height: 70px;
+  border: 0;
+  margin-right: 15px;
+}

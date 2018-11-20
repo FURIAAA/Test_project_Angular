@@ -1,0 +1,97 @@
+.container-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.profile {
+  margin-top: 65px;
+}
+
+.profile_head {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.profile_block {
+  margin-top: 20px;
+  border-style: groove;
+  background-color: white;
+}
+
+.profile_info {
+  margin: 30px;
+}
+
+
+.first_info {
+  margin-left: 35px;
+}
+
+.profile_name {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.btn {
+  margin-top: 8px;
+}
+
+.profile_skills {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  margin-top: 55px;
+}
+
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #b5b5b5
+}
+
+.profile_skills_list {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.head_main {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  margin-bottom: 7px;
+  margin-top: 20px;
+}
+
+.text_head_main {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-top: 7px;
+}
+
+.content{
+  margin-left: 15px;
+}
+
+
+.text_head_main_2 {
+  font-family: 'Helvetica Bold', 'Helvetica';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 6px;
+  margin-top: 5px;
+}

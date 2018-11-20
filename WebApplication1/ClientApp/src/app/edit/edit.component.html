@@ -1,0 +1,164 @@
+<div class="container-fluid">
+  <div class="edit">
+    <div class="edit_head">
+      <span>Данные профиля</span>
+    </div>
+    <form>
+      <div class="edit_block">
+        <div class="edit_info">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="paragraph">
+                <span>Фото</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <image-upload [buttonCaption]="'Выберите фотографию'"
+                            [dropBoxMessage]="'Перенесите файлы в данную область, чтобы прикрепить.'"
+                            [fileTooLargeMessage]="'Размер файла слишком большой :('"
+                            [clearButtonCaption]="'Удалить'"
+                            [style]="'customStyle'"></image-upload><br />
+              <!--<div class="choose_photo">
+        <br>
+        <input type="file" name="uploadingFile" id="fileField">
+        <br>
+      </div>-->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="paragraph">
+                <span>Краткая биография (интересные факты)</span>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div>
+                <textarea class="edit_biog" name="biography" [(ngModel)]="biog" required></textarea>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="row" *ngFor="let a of fakeArray_1; let i = index" style="margin-bottom: 10px;">
+            <div class="col-lg-2">
+              <div class="paragraph">
+                <ng-container *ngIf="i == 0">
+                  <span>Тематика самостоятельной научно-исследовательской и творческой деятельности</span>
+                </ng-container>
+              </div>
+              <ng-container *ngIf="i > 0">
+                <img src="/images/delete.png" (click)="toggle_delete_1(i)" />
+              </ng-container>
+            </div>
+            <div class="col-lg-10">
+              <div class="theme">
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Наименование:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <div>
+                    <input type="text" class="input_text" name="theme_n_{{i}}" [(ngModel)]="theme_name[i+1]" required />
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Реквизиты подтверждающего документа:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <div>
+                    <input type="text" class="input_text" name="rekvezit_{{i}}" [(ngModel)]="rekvezit_text[i+1]" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+              <div class="add_theme">
+                <button (click)="toggle_1()">
+                  <span>Добавить тематику деятельности</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row" *ngFor="let a of fakeArray_2; let ind = index" style="margin-top:10px;">
+            <div class="col-lg-2">
+              <div class="paragraph">
+                <ng-container *ngIf="ind == 0">
+                  <span>Опыт работы в научных организациях или в реальном секторе экономики</span>
+                </ng-container>
+              </div>
+              <ng-container *ngIf="ind > 0">
+                <img src="/images/delete.png" (click)="toggle_delete_2(i)" />
+              </ng-container>
+            </div>
+            <div class="col-lg-10">
+              <div class="theme" style="height:250px;">
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Наименование организации:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <input type="text" class="input_text" name="org_n_{{ind}}" [(ngModel)]="org_name[ind+1]" required />
+                </div>
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Должность в организации:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <input type="text" class="input_text" name="position_{{ind}}" [(ngModel)]="position_text[ind+1]" required />
+                </div>
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Период:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <input type="date" class="input_text_2" name="data_1_{{ind}}" [(ngModel)]="data1_text[ind+1]" required />
+                  -
+                  <input type="date" class="input_text_2 pull-right" name="data_2_{{ind}}" [(ngModel)]="data2_text[ind+1]" required />
+                </div>
+                <div class="col-lg-2">
+                  <div class="paragraph_in">
+                    <span>Загрузить подтверждающий документ:</span>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <input type="file" name="uploadingFile_{{ind}}" id="fileField" class="load_doc" [(ngModel)]="file_input[ind+1]" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+              <div class="add_theme">
+                <button (click)="toggle_2()">
+                  <span>Добавить работу по совместительству</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="edit_footer">
+        </div>
+      </div>
+      <br />
+    </form>
+    <div class="edit_save_cancel">
+          <button type="button" class="btn btn-primary">Сохранить</button>
+          <button type="button" class="btn btn-danger">Отмена</button>
+    </div>
+  </div>
+</div>

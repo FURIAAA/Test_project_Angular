@@ -1,0 +1,135 @@
+.container-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.edit {
+  margin-top: 65px;
+}
+
+.edit_head {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.edit_block {
+  margin-top: 20px;
+  border-style: groove;
+  background-color: white;
+  padding-right: 15px;
+  /*height: 750px;*/
+  width: calc(100%-20px);
+  /*overflow: auto;*/
+}
+
+.edit_info {
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+
+.edit_photo {
+  border-style: dashed;
+  border-width: 1px;
+  background-color: white;
+  height: 100px;
+  padding: 10px;
+}
+
+
+.paragraph {
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.edit_photo img {
+  margin-top: 20px;
+}
+.edit_photo img_text {
+  margin-top: -0.625em;
+}
+
+
+.edit_biog {
+  width: 100%;
+  height: 150px;
+  font-family: 'Arial Regular', 'Arial';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+  text-align: left;
+  resize: vertical;
+}
+
+.theme {
+  border-width:1px;
+  border-style: groove;
+  background-color: white;
+  height: 150px;
+}
+
+img {
+  position: absolute;
+  right: 10px;
+}
+button{
+  border:none;
+  background-color:white;
+  text-decoration:underline;
+}
+
+.paragraph_in {
+  margin-top: 10px;
+  font-family: 'Helvetica Regular', 'Helvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+
+.add_theme {
+  margin-top: 8px;
+  text-decoration: underline;
+  color: #428BCA; 
+}
+
+.input_text {
+  margin-top:10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 35px;
+  display:inline;
+}
+
+.input_text_2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 49%;
+  height: 35px;
+  display: inline;
+}
+
+.load_doc {
+  margin-top: 10px;
+}
+
+.edit_footer {
+  background-color: white;
+  height: 250px;
+}
+
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+  border: solid red 2px;
+}
+
+input.ng-touched.ng-valid, textarea.ng-touched.ng-valid {
+  border: solid green 2px;
+}
+
