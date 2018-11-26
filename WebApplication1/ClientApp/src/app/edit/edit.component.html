@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="edit">
-    <div class="edit_head">
-      <span>Данные профиля</span>
+    <div class="header">
+      <span class="header__text">Данные профиля</span>
     </div>
-    <form>
-      <div class="edit_block">
-        <div class="edit_info">
+    <form #form="ngForm">
+      <div class="main-block">
+        <div class="edit-information">
           <div class="row">
             <div class="col-lg-2">
               <div class="paragraph">
@@ -18,11 +18,6 @@
                             [fileTooLargeMessage]="'Размер файла слишком большой :('"
                             [clearButtonCaption]="'Удалить'"
                             [style]="'customStyle'"></image-upload><br />
-              <!--<div class="choose_photo">
-        <br>
-        <input type="file" name="uploadingFile" id="fileField">
-        <br>
-      </div>-->
             </div>
           </div>
 
@@ -34,13 +29,13 @@
             </div>
             <div class="col-lg-10">
               <div>
-                <textarea class="edit_biog" name="biography" [(ngModel)]="biog" required></textarea>
+                <textarea class="edit-biog" name="biography" [(ngModel)]="Biography" required></textarea>
               </div>
             </div>
           </div>
           <br />
 
-          <div class="row" *ngFor="let a of fakeArray_1; let i = index" style="margin-bottom: 10px;">
+          <div class="row" *ngFor="let a of ThemeWork; let i = index" style="margin-bottom: 10px;">
             <div class="col-lg-2">
               <div class="paragraph">
                 <ng-container *ngIf="i == 0">
@@ -48,7 +43,7 @@
                 </ng-container>
               </div>
               <ng-container *ngIf="i > 0">
-                <img src="/images/delete.png" (click)="toggle_delete_1(i)" />
+                <img src="/images/delete.png" (click)="DeleteTheme(i)" />
               </ng-container>
             </div>
             <div class="col-lg-10">
@@ -60,7 +55,7 @@
                 </div>
                 <div class="col-lg-10">
                   <div>
-                    <input type="text" class="input_text" name="theme_n_{{i}}" [(ngModel)]="theme_name[i+1]" required />
+                    <input type="text" class="input_text" name="theme_n_{{i}}" [(ngModel)]="ThemeName[i+1]" required />
                   </div>
                 </div>
                 <div class="col-lg-2">
@@ -70,7 +65,7 @@
                 </div>
                 <div class="col-lg-10">
                   <div>
-                    <input type="text" class="input_text" name="rekvezit_{{i}}" [(ngModel)]="rekvezit_text[i+1]" required />
+                    <input type="text" class="input_text" name="rekvezit_{{i}}" [(ngModel)]="Props[i+1]" required />
                   </div>
                 </div>
               </div>
@@ -81,7 +76,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-10">
               <div class="add_theme">
-                <button (click)="toggle_1()">
+                <button (click)="AddTheme()" class="add-field-btn">
                   <span>Добавить тематику деятельности</span>
                 </button>
               </div>
@@ -90,7 +85,7 @@
 
           <br>
 
-          <div class="row" *ngFor="let a of fakeArray_2; let ind = index" style="margin-top:10px;">
+          <div class="row" *ngFor="let a of Experience; let ind = index" style="margin-top:10px;">
             <div class="col-lg-2">
               <div class="paragraph">
                 <ng-container *ngIf="ind == 0">
@@ -98,7 +93,7 @@
                 </ng-container>
               </div>
               <ng-container *ngIf="ind > 0">
-                <img src="/images/delete.png" (click)="toggle_delete_2(i)" />
+                <img src="/images/delete.png" (click)="DeleteExperience(i)" />
               </ng-container>
             </div>
             <div class="col-lg-10">
@@ -109,7 +104,7 @@
                   </div>
                 </div>
                 <div class="col-lg-10">
-                  <input type="text" class="input_text" name="org_n_{{ind}}" [(ngModel)]="org_name[ind+1]" required />
+                  <input type="text" class="input_text" name="org_n_{{ind}}" [(ngModel)]="NameOrganization[ind+1]" required />
                 </div>
                 <div class="col-lg-2">
                   <div class="paragraph_in">
@@ -117,7 +112,7 @@
                   </div>
                 </div>
                 <div class="col-lg-10">
-                  <input type="text" class="input_text" name="position_{{ind}}" [(ngModel)]="position_text[ind+1]" required />
+                  <input type="text" class="input_text" name="position_{{ind}}" [(ngModel)]="PositionOrganization[ind+1]" required />
                 </div>
                 <div class="col-lg-2">
                   <div class="paragraph_in">
@@ -125,9 +120,9 @@
                   </div>
                 </div>
                 <div class="col-lg-10">
-                  <input type="date" class="input_text_2" name="data_1_{{ind}}" [(ngModel)]="data1_text[ind+1]" required />
+                  <input type="date" class="input_text_2" name="data_1_{{ind}}" [(ngModel)]="DataText1[ind+1]" required />
                   -
-                  <input type="date" class="input_text_2 pull-right" name="data_2_{{ind}}" [(ngModel)]="data2_text[ind+1]" required />
+                  <input type="date" class="input_text_2 pull-right" name="data_2_{{ind}}" [(ngModel)]="DataText2[ind+1]" required />
                 </div>
                 <div class="col-lg-2">
                   <div class="paragraph_in">
@@ -135,7 +130,7 @@
                   </div>
                 </div>
                 <div class="col-lg-10">
-                  <input type="file" name="uploadingFile_{{ind}}" id="fileField" class="load_doc" [(ngModel)]="file_input[ind+1]" required>
+                  <input type="file" name="uploadingFile_{{ind}}" id="fileField" class="load_doc" [(ngModel)]="FileInput[ind+1]" required>
                 </div>
               </div>
             </div>
@@ -144,7 +139,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-10">
               <div class="add_theme">
-                <button (click)="toggle_2()">
+                <button (click)="AddExperience()" class="add-field-btn">
                   <span>Добавить работу по совместительству</span>
                 </button>
               </div>
